@@ -4,7 +4,7 @@ sudo apt-get install -y python3.10 python3.10-venv
 
 in_venv=$(python3 -c 'import sys; print(sys.prefix != sys.base_prefix)')
 
-if ! ${in_venv}; then
+if [[ ${in_venv} == "False" ]]; then
   python3 -m venv venv
   source venv/bin/activate
 fi
