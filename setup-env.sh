@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-sudo apt-get install -y python3.10-venv
+sudo apt-get install -y python3.10 python3.10-venv
 
-in_venv=$(python3 -c 'import sys; return sys.prefix != sys.base_prefix')
+in_venv=$(python3 -c 'import sys; print(sys.prefix != sys.base_prefix)')
 
 if ! ${in_venv}; then
   python3 -m venv venv
