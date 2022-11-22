@@ -1,0 +1,8 @@
+venv/
+src/payment/migrations/00*.py
+src/db.sqlite3
+.idea/
+docker-compose.yaml
+Dockerfile
+docker-entrypoint.sh
+*/__pycache__/*
