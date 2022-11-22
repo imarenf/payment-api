@@ -11,13 +11,15 @@ fi
 
 python3 -m pip install -r requirements.txt
 
+source .env
+
 cd src
 
 python3 manage.py makemigrations payment --no-input -v 0
 
 python3 manage.py migrate --no-input
 
-if [ "${DJANGO_SUPERUSER_NAME}" ]; then
+if [ "${DJANGO_SUPERUSER_USERNAME}" ]; then
   python3 manage.py create_admin \
           --username "${DJANGO_SUPERUSER_USERNAME}" \
           --email "${DJANGO_SUPERUSER_EMAIL}" \
