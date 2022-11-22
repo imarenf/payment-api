@@ -24,4 +24,4 @@ if [ "${DJANGO_SUPERUSER_NAME}" ]; then
           --password "${DJANGO_SUPERUSER_PASSWORD}"
 fi
 
-python manage.py fill_database
+python manage.py fill_database --count 10
