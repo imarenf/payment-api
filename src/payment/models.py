@@ -7,8 +7,8 @@ class Item(models.Model):
     price = models.FloatField()
 
     class Meta:
-        verbose_name_plural = 'Товары'
-        verbose_name = 'Товар'
+        verbose_name_plural = 'Items'
+        verbose_name = 'Item'
 
     def __str__(self):
         return self.name
