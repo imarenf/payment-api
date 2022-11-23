@@ -1,0 +1,32 @@
+version: "3.9"
+services:
+  web:
+    build: .
+    container_name: "payment_api"
+    entrypoint: /usr/src/app/docker-entrypoint.sh
+    command: python manage.py runserver 0.0.0.0:8000
+    restart: always
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    networks:
+      - payment_backend
+    env_file:
+      - ./env_files/python/.env
+  db:
+    image: "postgres:14"
+    container_name: "payment_db"
+    restart: always
+    volumes:
+      - payment_db_volume:/var/lib/postgresql/data
+    networks:
+      - payment_backend
+    env_file:
+      - ./env_files/postgres/.env
+
+volumes:
+  payment_db_volume: {}
+
+networks:
+  payment_backend: {}
