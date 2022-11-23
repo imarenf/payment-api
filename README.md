@@ -1,11 +1,6 @@
 # Django + Stripe API backend 
 
-### Installation and configure requirements:
+### Installation, configure requirements and local launch:
 1) git clone https://github.com/imarenf/payment-api.git
 2) cd payment-api
-3) ./setup-env.sh
-
-### Local launch:
-1) source venv/bin/activate
-2) cd src
-3) python manage.py runserver 
+3) docker-compose up
